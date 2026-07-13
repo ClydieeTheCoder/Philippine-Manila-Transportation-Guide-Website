@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Routes, LRT Fares, Tricycle & Ride-Hailing Estimator | Sakay Manila</title>
+<meta name="description" content="Look up real Manila bus route fares, LRT 1 & 2 ticket prices, tricycle fares, and Grab/Uber/Angkas/MoveIt/InDrive/GSM Blue estimates — with a 50% Student, Senior Citizen, and PWD discount toggle.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚏</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+<div class="container nav-bar">
+<a class="brand" href="index.html">SAKAY<span>MANILA</span></a>
+<button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" id="navToggle">☰</button>
+<nav aria-label="Primary">
+<ul class="nav-links" id="primary-nav">
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html" aria-current="page">Transport Guide</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+
+  <section class="ticket-hero" style="padding-bottom: 1rem;">
+<div class="container">
+<p class="eyebrow">Transport Guide</p>
+<h1>Every Manila ride, explained</h1>
+<p class="ticket-lede">This guide is built around Manila's city buses, LRT 1 & 2, tricycles, and ride-hailing apps — with real named routes, real fares, and a 50% discount for students, senior citizens, and PWDs on every calculator below. Routes outside Manila city limits are not covered.</p>
+</div>
+</section>
+
+  <!-- TRANSPORT MODE CARDS -->
+<section id="modes">
+<div class="container">
+<div class="section-head">
+<p class="eyebrow">Compare modes</p>
+<h2>Bus, LRT, tricycle, or ride-hailing?</h2>
+</div>
+<div class="grid-4">
+
+        <div class="route-card">
+<div class="route-card__top">
+<div class="route-card__mode">🚌 City Bus</div>
+<div class="route-card__fare">₱18 – ₱20</div>
+</div>
+<div class="route-card__body">
+<ul>
+<li>Fixed fares between named Manila landmarks — Divisoria, Quiapo, España, Intramuros, and more.</li>
+<li>Pick your route in the Bus Ticket Machine below for an exact fare, no guesswork.</li>
+<li>Board at any recognized stop along the route — no fixed terminals needed.</li>
+<li>Students, senior citizens, and PWDs ride at 50% off with valid ID.</li>
+</ul>
+<div class="tag-row"><span class="tag">Fixed fare</span><span class="tag">50% discount</span></div>
+</div>
+</div>
+
+        <div class="route-card">
+<div class="route-card__top">
+<div class="route-card__mode">🚈 LRT 1 & 2</div>
+<div class="route-card__fare">₱15 – ₱50</div>
+</div>
+<div class="route-card__body">
+<ul>
+<li>Fastest way across Manila, skipping street traffic entirely.</li>
+<li>Fare depends on how many stations apart your origin and destination are.</li>
+<li>LRT 1 runs Manila's Taft Avenue corridor; LRT 2 runs the Recto–Santolan corridor.</li>
+<li>Trains run frequently during peak hours, so waits rarely top 5 minutes.</li>
+</ul>
+<div class="tag-row"><span class="tag">Skip traffic</span><span class="tag">50% discount</span></div>
+</div>
+</div>
+
+        <div class="route-card">
+<div class="route-card__top">
+<div class="route-card__mode">🚙 Tricycle</div>
+<div class="route-card__fare">₱40 – ₱60</div>
+</div>
+<div class="route-card__body">
+<ul>
+<li>Best for short hops within a neighborhood — a few blocks to about a kilometer.</li>
+<li>Fare depends on distance and how many passengers are sharing the ride.</li>
+<li>Look for tricycle terminals near markets, schools, and residential streets.</li>
+<li>Students, senior citizens, and PWDs ride at 50% off with valid ID.</li>
+</ul>
+<div class="tag-row"><span class="tag">Short trips</span><span class="tag">50% discount</span></div>
+</div>
+</div>
+
+        <div class="route-card">
+<div class="route-card__top">
+<div class="route-card__mode">🚗 Ride-Hailing</div>
+<div class="route-card__fare">₱45 – ₱999</div>
+</div>
+<div class="route-card__body">
+<ul>
+<li>Grab, Uber, Angkas, MoveIt, InDrive, and GSM Blue all cover Manila.</li>
+<li>Pin your pickup and drop-off in the estimator below for a distance-based price.</li>
+<li>Good for door-to-door trips or when it's raining and the queues are long.</li>
+<li>Fares rise during rain and rush hour — check more than one app before booking.</li>
+</ul>
+<div class="tag-row"><span class="tag">Door-to-door</span><span class="tag">50% discount</span></div>
+</div>
+</div>
+
+      </div>
+</div>
+</section>
+
+  <!-- SHARED DISCOUNT TOGGLE -->
+<section class="section-alt" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+<div class="container">
+<div class="discount-banner">
+<div class="discount-banner__text">
+<h3>🎓👵♿ Student / Senior Citizen / PWD?</h3>
+<p>Flip this switch and every calculator below — bus, LRT, tricycle, and ride-hailing — instantly recalculates at <strong>50% off</strong>, with valid ID.</p>
+</div>
+<label class="switch">
+<input type="checkbox" id="discountToggle">
+<span class="switch-track"><span class="switch-thumb"></span></span>
+<span class="switch-label" id="discountLabel">Discount off</span>
+</label>
+</div>
+</div>
+</section>
+
+  <!-- BUS TICKET MACHINE (NAMED MANILA ROUTES) -->
+<section>
+<div class="container">
+<div class="ticket-machine">
+<p class="eyebrow" style="background:rgba(255,193,59,0.15); border-color:var(--color-accent); color:var(--color-accent);">Try it</p>
+<h3>🚌 Bus Ticket Machine</h3>
+<p style="color:rgba(255,255,255,0.8); max-width:60ch;">Choose where you're boarding — the "To" list only shows stops actually served from there (works in reverse too). Then get your ticket.</p>
+
+<form id="busTicketForm" class="route-grid">
+<div class="field">
+<label for="busFrom">From</label>
+<select id="busFrom"></select>
+</div>
+<div class="field">
+<label for="busTo">To</label>
+<select id="busTo"></select>
+</div>
+<div class="field">
+<button type="submit" class="btn btn-primary" style="width:100%;">View Details</button>
+</div>
+</form>
+
+<div id="bus-ticket-output" role="status" aria-live="polite"></div>
+</div>
+</div>
+</section>
+
+  <!-- LRT TICKET MACHINE (MANILA STATIONS ONLY) -->
+<section class="section-alt">
+<div class="container">
+<div class="ticket-machine">
+<p class="eyebrow" style="background:rgba(255,193,59,0.15); border-color:var(--color-accent); color:var(--color-accent);">Try it</p>
+<h3>🚈 LRT Ticket Machine</h3>
+<p style="color:rgba(255,255,255,0.8); max-width:60ch;">Choose a line first — the From/To lists only ever show that line's own Manila stations. Pick where you're boarding and where you're getting off, then get your ticket.</p>
+
+<div class="line-tabs" role="tablist" aria-label="Choose LRT line">
+<button type="button" class="line-tab active" id="tabLrt1" data-line="lrt1" role="tab" aria-selected="true">LRT Line 1</button>
+<button type="button" class="line-tab" id="tabLrt2" data-line="lrt2" role="tab" aria-selected="false">LRT Line 2</button>
+</div>
+
+<form id="ticketForm" class="route-grid">
+<div class="field">
+<label for="stationFrom">From</label>
+<select id="stationFrom"></select>
+</div>
+<div class="field">
+<label for="stationTo">To</label>
+<select id="stationTo"></select>
+</div>
+<div class="field">
+<button type="submit" class="btn btn-primary" style="width:100%;">View Details</button>
+</div>
+</form>
+
+<div id="ticket-output" role="status" aria-live="polite"></div>
+</div>
+</div>
+</section>
+
+  <!-- TRICYCLE FARE CALCULATOR (SHORT MANILA HOPS) -->
+<section>
+<div class="container">
+<div class="ticket-machine">
+<p class="eyebrow" style="background:rgba(255,193,59,0.15); border-color:var(--color-accent); color:var(--color-accent);">Try it</p>
+<h3>🚙 Tricycle Fare Calculator</h3>
+<p style="color:rgba(255,255,255,0.8); max-width:60ch;">Pick your pickup and drop-off point anywhere around Manila. Tricycle fares run roughly ₱40 to ₱60 and scale with how far you're going — this isn't a flat rate.</p>
+
+<form id="tricycleForm" class="route-grid">
+<div class="field">
+<label for="tricyclePickup">Pickup (pin near)</label>
+<select id="tricyclePickup"></select>
+</div>
+<div class="field">
+<label for="tricycleDropoff">Drop-off (pin near)</label>
+<select id="tricycleDropoff"></select>
+</div>
+<div class="field">
+<button type="submit" class="btn btn-primary" style="width:100%;">View Price</button>
+</div>
+</form>
+
+<div id="tricycle-output" role="status" aria-live="polite"></div>
+</div>
+</div>
+</section>
+
+  <!-- RIDE-HAILING ESTIMATOR -->
+<section class="section-alt">
+<div class="container">
+<div class="estimator">
+<p class="eyebrow" style="background:rgba(255,193,59,0.15); border-color:var(--color-accent); color:var(--color-accent);">Try it</p>
+<h3>🚗 Ride-Hailing Estimator</h3>
+<p style="color:rgba(255,255,255,0.8);">Pick an app, then your pickup and drop-off point anywhere around Manila. We'll estimate a distance-based fare, capped around ₱999 for longer crossings.</p>
+<form id="rideForm">
+<div class="estimator-grid ride-grid">
+<div class="field">
+<label for="rideProvider">Ride-hailing app</label>
+<select id="rideProvider" name="rideProvider">
+<option value="Grab">Grab</option>
+<option value="Uber">Uber</option>
+<option value="Angkas">Angkas</option>
+<option value="MoveIt">MoveIt</option>
+<option value="InDrive">InDrive</option>
+<option value="GSM Blue">GSM Blue</option>
+</select>
+</div>
+<div class="field">
+<label for="ridePickup">Pickup (pin near)</label>
+<select id="ridePickup"></select>
+</div>
+<div class="field">
+<label for="rideDropoff">Drop-off (pin near)</label>
+<select id="rideDropoff"></select>
+</div>
+<div class="field">
+<button type="submit" class="btn btn-primary" style="width:100%;">View Price</button>
+</div>
+</div>
+</form>
+<div id="ride-result" role="status" aria-live="polite"></div>
+</div>
+</div>
+</section>
+
+  <!-- FAQ (interactive JS accordion) -->
+<section class="section-alt">
+<div class="container">
+<div class="section-head">
+<p class="eyebrow">Common questions</p>
+<h2>Before you sakay</h2>
+</div>
+<div id="faq">
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+            How much does a tricycle cost in Manila? <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><p>Short trips typically run ₱40 to ₱60, depending on distance and how many passengers are sharing the ride. Rates can vary slightly by barangay or terminal, so it's always smart to confirm with the driver before boarding.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+            How does the Student / Senior Citizen / PWD discount work? <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><p>Flip the discount toggle above any calculator and the fare shown automatically drops by 50%, per Philippine law for students, senior citizens, and PWDs. Bring a valid ID (school ID, senior citizen ID, or PWD ID) when you actually board or book.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+            Is the bus fare the same in both directions? <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><p>Yes — a route like Divisoria to Quiapo costs the same as Quiapo to Divisoria. Pick either point as your "From" in the Bus Ticket Machine and the reverse trip will show up in "To".</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+            Can I transfer between LRT 1 and LRT 2 within Manila? <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><p>Yes — both lines share a connection near Recto/Doroteo Jose in Manila. You'll need a new fare for the second line unless you're using a common stored-value card.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+            Which ride-hailing app is cheapest in Manila? <span class="faq-icon">+</span>
+</button>
+<div class="faq-answer"><p>It varies by time of day and surge pricing. Our estimator gives you a rough distance-based range so you can compare Grab, Uber, Angkas, MoveIt, InDrive, and GSM Blue before you open each app.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<h4>SAKAY MANILA</h4>
+<p>A budget-first guide to getting around the City of Manila by bus, LRT 1 & 2, tricycle, and ride-hailing apps — with student, senior, and PWD discounts built in.</p>
+</div>
+<div>
+<h4>Explore</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Transport Guide</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4>Good to know</h4>
+<ul>
+<li>Manila routes only — not Metro-wide</li>
+<li>Cash is still king</li>
+<li>Always ask "Magkano po?"</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Sakay Manila. Made for budget travelers.</span>
+<span>Built as a student mini-project.</span>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
